@@ -20,7 +20,16 @@ class MainActivity: YsBaseActivity<MainViewModel, ActivityMainBinding>() {
 
     override fun init() {
         DataBase.instance(this)
-        //viewModel.repository.name = SharedPreferences(application).getName()
+
+        /** Permission Sample
+        checkAndRequestPermission(Manifest.permission.ACCESS_COARSE_LOCATION, 0)
+            mRequestPermission = object: RequestPermission {
+            override fun onCallBack(isSuccess: Boolean, requestCode: Int) {
+            Log.e("RequestPermission", "$isSuccess")
+            Log.e("Tag", "$requestCode")
+            }
+        }
+         */
     }
 
     override fun setListener() {}

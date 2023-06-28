@@ -1,14 +1,21 @@
-apply plugin: 'com.android.library'
+apply plugin: 'com.android.library' //打包
+//apply plugin: 'com.android.application' //測試
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-kapt'
 
+/** git bash check aar
+ * $ ./gradlew assemble
+ */
 android {
     compileSdkVersion 33
     buildToolsVersion '30.0.3'
 
     defaultConfig {
-        minSdkVersion 21
+//        applicationId "com.ys.mvvm" //測試
+//        compileSdkVersion 33 //測試
+
         targetSdkVersion 33
+        minSdkVersion 21
 
         versionCode 1
         versionName "1.0.1"

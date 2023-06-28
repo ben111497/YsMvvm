@@ -1,9 +1,12 @@
 package com.example.mvvm.ui.base
 
+import android.content.pm.PackageManager
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.activity.result.contract.ActivityResultContracts
+import androidx.core.app.ActivityCompat
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.LifecycleOwner
 import androidx.viewbinding.ViewBinding
@@ -38,4 +41,11 @@ abstract class YsBaseFragment<ViewModel: androidx.lifecycle.ViewModel, binding: 
     abstract fun observeViewModel()
     abstract fun init()
     abstract fun setListener()
+
+    fun checkAndRequestPermission(permission: String, TAG: Int, result: (Boolean, Int) -> Unit): Boolean {
+        return if (ActivityCompat.checkSelfPermission(requireActivity(), permission) != PackageManager.PERMISSION_GRANTED) {
+            registerForActivityResult(ActivityResultContracts.RequestPermission()) { isGranted -> result(isGranted, TAG) }.launch(permission)
+            false
+        } else true
+    }
 }
