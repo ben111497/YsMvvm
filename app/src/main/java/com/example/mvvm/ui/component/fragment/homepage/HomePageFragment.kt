@@ -34,6 +34,13 @@ class HomePageFragment: YsBaseFragment<HomepageViewModel, FragmentSampleBinding>
 
     override fun init() {
         viewModel.getLocalNumber()
+
+        /** Permission Sample
+        checkAndRequestPermission(Manifest.permission.ACCESS_COARSE_LOCATION, 0) { isGranted, TAG ->
+            Log.e("RequestPermission", "$isGranted")
+            Log.e("Tag", "$TAG")
+        }
+         */
     }
 
     override fun setListener() {

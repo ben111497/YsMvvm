@@ -1,4 +1,5 @@
-apply plugin: 'com.android.library'
+//apply plugin: 'com.android.library' //打包
+apply plugin: 'com.android.application' //測試
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-kapt'
 
@@ -7,8 +8,11 @@ android {
     buildToolsVersion '30.0.3'
 
     defaultConfig {
+        applicationId "com.ys.mvvm" //測試
+        compileSdkVersion 33
+
+        //targetSdkVersion 33
         minSdkVersion 21
-        targetSdkVersion 33
 
         versionCode 1
         versionName "1.0.1"
