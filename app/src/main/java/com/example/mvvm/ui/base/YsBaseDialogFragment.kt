@@ -14,6 +14,7 @@ abstract class YsBaseDialogFragment<ViewModel: androidx.lifecycle.ViewModel, bin
 constructor(private val widthPercent: Double = -1.0, private val heightPercent: Double = -1.0): DialogFragment() {
     lateinit var viewModel: ViewModel
     var binding: binding? = null
+    val viewModelInit: Boolean get() = ::viewModel.isInitialized
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
