@@ -13,7 +13,7 @@
         android:supportsRtl="true"
         android:theme="@style/NoActionBar">
         <activity
-            android:name="com.example.mvvm.ui.component.activity.main.MainActivity"
+            android:name="com.example.mvvm.ui.component.activity.sample.SampleActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
