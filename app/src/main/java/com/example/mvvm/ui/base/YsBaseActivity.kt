@@ -23,13 +23,9 @@ abstract class YsBaseActivity<ViewModel: androidx.lifecycle.ViewModel, binding: 
         super.onCreate(savedInstanceState)
         initViewBinding()
         initViewModel()
-    }
-
-    override fun onCreateView(name: String, context: Context, attrs: AttributeSet): View? {
         observeViewModel()
         setListener()
         init()
-        return super.onCreateView(name, context, attrs)
     }
 
     abstract fun initViewBinding()
